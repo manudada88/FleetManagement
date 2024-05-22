@@ -13,7 +13,7 @@ values('03AXA','2014-05-05', 102);
 insert into dealers (dealer_ID, EMAIL, NAME, REPRESENTATIVE_FULL_NAME) values
 (1001, 'rahulMahajan@pegusagro.com', 'Pegas-agro', 'Rahul Mahajan');
 
-insert into CUSTOMERS_DEALERS_ASSIGNED  (CUSTOMERS_LIST_CUSTOMER_ID, DEALERS_ASSIGNED_DEALER_ID)
+insert into CUSTOMER_Dealer  (CUSTOMER_ID, DEALER_ID)
 values (101,1001);
-insert into CUSTOMERS_DEALERS_ASSIGNED  (CUSTOMERS_LIST_CUSTOMER_ID, DEALERS_ASSIGNED_DEALER_ID)
+insert into CUSTOMER_Dealer  (CUSTOMER_ID, DEALER_ID)
 values (102,1001);

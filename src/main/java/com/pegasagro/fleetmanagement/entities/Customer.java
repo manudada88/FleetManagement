@@ -14,6 +14,7 @@ import jakarta.validation.constraints.NotNull;
 public class Customer {
 	
 	@Id
+	@JoinColumn(name = "customer_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long customerId;
 	
@@ -33,6 +34,11 @@ public class Customer {
 
 	@ManyToMany
 	@JsonIgnore
+	@JoinTable(
+			name = "Customer_Dealer",
+			joinColumns = { @JoinColumn(name = "customer_id") },
+			inverseJoinColumns = { @JoinColumn(name = "dealer_id") }
+	)
 	private Set<Dealer> dealersAssigned = new HashSet<>();
 	
 	public Customer() {

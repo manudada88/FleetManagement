@@ -12,6 +12,7 @@ import jakarta.validation.constraints.NotNull;
 public class Dealer {
 
     @Id
+    @JoinColumn(name = "dealer_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dealerId;
 

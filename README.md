@@ -1,4 +1,4 @@
-"# FleetManagement" 
+"**# FleetManagement**"  
 
 It is a rest api based Spring project to manage Dealers, Customer and their Car.
 It used H2 Database (in memmory database) to store the different information.
@@ -17,12 +17,14 @@ It has following API's exposed to serve request:
    Assembly date is past date and today's date - future date is not allowed
    
 **Request Body**
+
 {
 "uniqueNumber": "432T1",
 "assemblyDate": "2019-05-20"
 }
 
 **Response - returns car object and 201 Status code**
+
 {
     "uniqueNumber": "432T1",
     "assemblyDate": "2019-05-20"
@@ -36,6 +38,7 @@ Fullname cannot be blank or null
 email should be in formate and cannot be blank
    
 **Request Body**
+
 { 
 	"fullName":"Manu Shrivastava",
 	"phoneNumber" : "785462154",
@@ -43,6 +46,7 @@ email should be in formate and cannot be blank
 }	
 
 **Response - returns created customer object and 201 Status code**
+
 {
     "customerId": 1,
     "fullName": "Manu Shrivastava",
@@ -54,11 +58,13 @@ email should be in formate and cannot be blank
 3. Create Dealer
 
 **POST Resource "/dealers"**
+
 name cannot be blank or nll
 email should be in formate and cannot be blank
 representativefullname cannot be blank or null
    
 **Request Body**
+
 { 
 	"name":"ABC Corp",
 	"email":"manu.shrivastava@ru.com",
@@ -66,6 +72,7 @@ representativefullname cannot be blank or null
 }	
 
 **Response - returns created dealer object and 201 Status code**
+
 {
     "dealerId": 1,
     "name": "ABC Corp",
@@ -77,16 +84,19 @@ representativefullname cannot be blank or null
 4. assign car to customer
 
 **POST Resource "/assign-car-customer"**
+
 carUniqueNumber cannot be null, but alphanumeric and of length 1-5
 customerId cannot be null or blank
    
 **Request Body**
+
 {
 "carUniqueNumber": "03TXA",
 "customerId": "101"
 }
 
 **Response - returns customer object with car assigned and 200 Status code**
+
 {
     "customerId": 101,
     "fullName": "Manu Shrivastava",
@@ -103,16 +113,19 @@ customerId cannot be null or blank
 5. unassign car from customer: detach car from the customer
 
 **POST Resource "/unassign-car-customer"**
+
 carUniqueNumber cannot be null, but alphanumeric and of length 1-5
 customerId cannot be null or blank
    
 **Request Body**
+
 {
 "carUniqueNumber": "03TXA",
 "customerId": "101"
 }
 
 **Response - returns customer object with car assigned and 200 Status code**
+
 {
     "customerId": 101,
     "fullName": "Manu Shrivastava",
@@ -128,12 +141,14 @@ dealerId cannot be null or blank
 customerId cannot be null or blank
    
 **Request Body**
+
 { 
 	"customerId":"103",
 	"dealerId" : "1001"
 }	
 
 **Response - returns Dealer object with customer details and also new customer assigned and 200 Status code**
+
 {
     "dealerId": 1001,
     "name": "Pegas-agro",
@@ -177,12 +192,14 @@ dealerId cannot be null or blank
 customerId cannot be null or blank
    
 **Request Body**
+
 { 
 	"customerId":"101",
 	"dealerId" : "1001"
 }
 
 **Response - returns Dealer object with customer details and also unassign customer and 200 Status code**
+
 {
     "dealerId": 1001,
     "name": "Pegas-agro",
@@ -220,6 +237,7 @@ customerId cannot be null or blank
 none
 
 **Response - returns customer object and 200 Status code**
+
 {
     "customerId": 101,
     "fullName": "Manu Shrivastava",
@@ -237,6 +255,7 @@ none
 none
 
 **Response - returns customer object and 200 Status code**
+
 {
     "dealerId": 1001,
     "name": "Pegas-agro",
